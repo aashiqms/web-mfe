@@ -1,6 +1,6 @@
-# Webfragments with Keycloak
+# Webfragments
 
-This project demonstrates a **microfrontend architecture** using **[web fragments](https://github.com/web-fragments/web-fragments)**, a central **shell app**, and **Keycloak** for authentication and authorization.
+This project demonstrates a **microfrontend architecture** using **[web fragments](https://github.com/web-fragments/web-fragments)**, a central **shell app**, and **MSAL** for authentication and authorization.
 
 The goal is to develop multiple frontends and backends modularly, deploy them independently, and integrate them dynamically within a shared shell.
 
@@ -78,33 +78,4 @@ pnpm start
 # reachable on http://localhost:3000/
 ```
 
-### Login
 
-Open in browser `http://localhost:8081/admin` to login to admin console of keycloak.
-Use as user = password = **admin**.
-
-Open in browser `http://localhost:3000/` to login to shell.
-Use as user = password =  **webfragements**.
-
-You should see the shell and the fragment loaded with a button.
-Clicking the button calls a request to load text **Hello World**.
-But this works not in current situation, but should.
-This is because we use in the fragment keycloak `onLoad` Option with `'check-sso'`.
-It works with the value `undefined` but that is not desired.
-
-## Optional
-
-### Export keycloak realms
-
-The following commands are for exporting changes in keycloak realms and save them for later.
-You need to stop the compose before running the commands.
-
-The realms will be imported on startup of the compose file.
-
-```bash
-cd containerization
-
-# export realms
-docker compose run --rm keycloak export --dir /opt/keycloak/data/import
-```
-# web-mfe
