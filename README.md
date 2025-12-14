@@ -15,10 +15,6 @@ The goal is to develop multiple frontends and backends modularly, deploy them in
 
 ### Project structure
 
-- **containerization/**
-  - `keycloak-realm/` → Keycloak configuration
-  - `compose.yml` → Compose setup
-  - `default.env` → Environment file
 - **fragment/**
   - `backend/` → Fragment backend (API and BFF)
   - `frontend/` → Fragment frontend (Angular)
@@ -49,23 +45,7 @@ cd shell/backend
 pnpm install
 ```
 
-## Docker Setup
 
-### Define environment variables
-
-Create an environment file `.env` in containerization.
-
-```bash
-cd containerization
-cp default.env .env
-```
-
-### Start compose
-
-```bash
-cd containerization
-docker compose up -d
-```
 
 ## Build and start apps
 
